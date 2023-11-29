@@ -1,7 +1,7 @@
 import gradio as gr
 import os 
 
-os.environ[ 'MPLCONFIGDIR' ] = '/tmp/'
+os.environ['MPLCONFIGDIR'] = os.getcwd() + "/configs/"
 
 def greet(name):
     return "Hello " + name + "!!"
