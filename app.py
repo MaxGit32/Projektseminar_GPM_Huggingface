@@ -1,11 +1,9 @@
 import gradio as gr
-import os 
 
-os.environ['MPLCONFIGDIR'] = os.getcwd() + "/configs/"
+# Funktion definieren, die Input in Output transformiert
+def pap(message, history):
+    return message + " Ich bin ein Papageien-Chatbot"
 
-def greet(name):
-    return "Hello " + name + "!!"
-
-iface = gr.Interface(fn=greet, inputs="text", outputs="text")
+iface = gr.ChatInterface(pap)
 iface.launch()
 
