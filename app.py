@@ -1,5 +1,7 @@
 import gradio as gr
-import matplotlib
+import os 
+
+os.environ[ 'MPLCONFIGDIR' ] = '/tmp/'
 
 def greet(name):
     return "Hello " + name + "!!"
