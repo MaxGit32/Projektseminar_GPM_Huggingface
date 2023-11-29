@@ -1,9 +1,9 @@
-FROM python:3.11.6-alpine
+FROM python:3.11.6
 
-WORKDIR usr/src/app
+RUN apt-get update && apt-get install -y git
+RUN git clone https://github.com/MaxGit32/Projektseminar_GPM_Huggingface.git
 
-COPY chatbot.py .
 
-#Abhängigkeiten müssen je nach dem was in der App gebraucht wird installiert werden
+WORKDIR ./Projektseminar_GPM_Huggingface
 
-CMD ["python", "chatbot.py", "--host", "0.0.0.0", "--port", "7860"]
+CMD ["python", "app.py", "--host", "0.0.0.0", "--port", "7860"]
